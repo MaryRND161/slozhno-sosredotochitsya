@@ -1,5 +1,196 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  font-family: var(--main-font, sans-serif);
+  color: var(--text-color,  #f1b2ce);
+  /*background-color: var(--bg-color);*/
+  font-size: 18px;
+  background-image: url(../images/cover-image-light.png);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+
+}
+
+.header {
+  padding: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
+  block-size: clamp(40.5rem, 20.4618rem + 85.4962vw, 61.5rem);
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  position: relative;
+}
+
+.header::after {
+  content: '';
+  /* position: absolute; */
+  inline-size: 25px;
+  block-size: 25px;
+  border-left: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
+  /* inset-block-start: 20px; */
+  /* inset-inline-start: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);*/
+}
+
+.header::before {
+  content: '';
+  /* position: absolute; */
+  inline-size: 25px;
+  block-size: 25px;
+  border-right: 1px solid var(--accent-color);
+  border-top: 1px solid var(--accent-color);
+  /* inset-block-start: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem); */
+  /* inset-inline-start: 20px; */
+  align-items: end;
+  margin-inline-start: calc(100% - 25px);
+  /* margin: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem); */
+}
+
+/*content: '';
+position: absolute;
+inline-size: 15px;
+block-size: 15px;
+margin-block-start: -7.5px;
+background-image: url(../images/marker-light.svg);
+background-repeat: no-repeat;
+background-position: center;
+background-size: contain;
+inset-block-start: 50%;
+inset-inline-start: -25px;
+}*/
+
+.header__theme-menu {
+  justify-self: end;
+}
+
+
+.header__theme-menu-list {
+  display: grid;
+  gap: 10px;
+  padding: 0;
+  grid-template-rows: repeat(3, 1fr);
+  list-style: none;
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+}
+
+@media (width>=1024px) {
+  .header__theme-menu-list  {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .header__theme-menu  {
+    justify-self: center;
+  }
+}
+
+.heading {
+  font-family: inherit;
+  color: var(--heading-color);
+  font-style: normal;
+  font-weight: 700;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 0.825;
+  text-shadow: 4px 4px 0 #FF0070;
+}
+
+@media (width>=768px) {
+  .heading {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
+
+.content__section {
+  margin: clamp(2.5rem, 1.3073rem + 5.0891vw, 3.75rem) clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem) clamp(3.125rem, 1.3359rem + 7.6336vw, 5rem);
+  display: grid;
+  grid-template-rows: min-content;
+  grid-template-columns: auto;
+  gap: 20px;
+}
+
+@media (width>=768px) {
+  .content__section {
+    grid-template-columns: 31% auto;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+.content__paragraph {
+  margin-block-start: 55px;
+  margin-block-end: 60px;
+}
+
+@media (width>=768px) {
+  .content__paragraph {
+    max-width: calc(100% / 2);
+    justify-self: end;
+    margin-block-start: clamp(10.125rem, 19.125rem + -18.75vw, 7.125rem);
+    margin-block-end: clamp(11.4375rem, 20.625rem + -19.1406vw, 8.375rem);
+  }
+}
+
+@media (width>768px) {
+  .content__section-three {
+    grid-template-rows: min-content auto;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.content__title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.3;
+  grid-row-end: span 2;
+  padding-block-end: 20px;
+}
+
+.content__title-three {
+  grid-column-end: span 3;
+}
+
+.paragraph__title {
+
+}
+
+.title-decor {
+  background-color: var(--accent-color);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.theme_dark .decorated-zone .header__theme-menu-button_type_dark::after {
+  background: url(../images/cover-image-dark.png);
+}
+
+a {
+  outline: none;
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+button {
+  outline: none;
+}
+
+a:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button:focus-visible {
+  border-bottom: 1px solid var(--accent-color);
+}
+
+button:hover {
+  outline: 1px solid var(--accent-color).7;
 }

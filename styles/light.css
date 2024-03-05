@@ -19,17 +19,18 @@
   background-image: url(../images/cover-image-light.png);
 }
 
-@media (prefers-color-scheme: light) {
+/*-@media (prefers-color-scheme: light) {
   :root {
         /* Дублируем переменные светлой темы */
-      --main-font: 'IBM Plex mono';
+ /*     --main-font: 'IBM Plex mono';
       --bg-color: #fff1f7;
       --text-color: #353430;
       --accent-color: #ff8dcb;
       --heading-color: #ffc2e6;
     }
+}
+*/
 
-  theme-light .page {
-    background-image: url(../images/cover-image-light.png);
-  }
+theme-light .page {
+  background-image: url(../images/cover-image-light.png);
 }

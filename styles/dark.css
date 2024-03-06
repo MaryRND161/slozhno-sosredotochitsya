@@ -17,15 +17,48 @@
     чем стили в медиазапросе предпочтений пользователя
   */
   background-image: url(../images/cover-image-dark.png);
+  --bg-color: #000028;
+  --text-color: #f1b2ce;
+  --accent-color: #ff0070;
+  --heading-color: #db00ff;
 }
 
 .theme-dark .page {
   background-image: url(../images/cover-image-dark.png);
+  --bg-color: #000028;
+  --text-color: #f1b2ce;
+  --accent-color: #ff0070;
+  --heading-color: #db00ff;
 }
 
 .theme_dark .title-decor {
   color: var(--bg-color);
 }
+
+.theme_dark .content__title {
+  color: var(--accent-color);
+}
+
+.theme_dark button {
+  color: var(--accent-color);
+}
+
+.theme_dark {
+  .decorated-zone::before {
+    border-right: 1px solid var(--accent-color);
+    border-top: 1px solid var(--accent-color);
+  }
+  .decorated-zone::after {
+    border-left: 1px solid var(--accent-color);
+    border-bottom: 1px solid var(--accent-color);
+  }
+
+  .decorated-element {
+    visibility: visible;
+  }
+}
+
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -36,3 +69,4 @@
         --heading-color: #db00ff;
     }
   }
+

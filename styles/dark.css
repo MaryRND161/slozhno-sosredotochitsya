@@ -48,6 +48,7 @@
     border-right: 1px solid var(--accent-color);
     border-top: 1px solid var(--accent-color);
   }
+
   .decorated-zone::after {
     border-left: 1px solid var(--accent-color);
     border-bottom: 1px solid var(--accent-color);

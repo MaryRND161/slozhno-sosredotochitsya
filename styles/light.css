@@ -22,12 +22,6 @@
   --text-color: #353430;
   --accent-color: #ff8dcb;
   --heading-color: #ffc2e6;
-
- /*.decorated-element {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s linear 300ms, opacity 300ms;
-  }*/
 }
 
 @media (prefers-color-scheme: light) {
@@ -40,7 +34,6 @@
       --heading-color: #ffc2e6;
     }
 }
-
 
 .theme-light .page {
   background-image: url(../images/cover-image-light.png);

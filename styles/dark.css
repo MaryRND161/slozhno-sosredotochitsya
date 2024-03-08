@@ -59,8 +59,6 @@
   }
 }
 
-
-
 @media (prefers-color-scheme: dark) {
   :root {
         /* Дублируем переменные светлой темы */

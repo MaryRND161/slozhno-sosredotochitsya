@@ -39,8 +39,12 @@
   color: var(--accent-color);
 }
 
-.theme_dark button {
+.theme_dark .header__theme-menu-button {
   color: var(--accent-color);
+}
+
+.theme_dark .header__theme-menu-button:hover {
+  outline: 1px solid rgba(255, 0, 112, 0.4);
 }
 
 .theme_dark {

@@ -42,3 +42,36 @@ a {
   font-size: inherit;
   line-height: inherit;
 }
+
+a {
+  outline: none;
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+a:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/*a:focus,
+button:focus {
+  outline: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+button:disabled {
+  pointer-events: none;
+}
+*/
+
+
+
+

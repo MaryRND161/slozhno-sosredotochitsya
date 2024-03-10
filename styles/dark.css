@@ -3,9 +3,19 @@
   здесь окажутся стили, которые нужно переопределить принудительно,
   переключая тему
 */
+@media(preferens-color-scheme:dark) {
+  .page {
+    background-image: url(../images/cover-image-dark.png);
+    --bg-color: #000028;
+    --text-color: #f1b2ce;
+    --accent-color: #ff0070;
+    --heading-color: #db00ff;
+  }
+}
 
 :root.theme-dark {
   /* Дублируем переменные для тёмной темы */
+  background-image: url(../images/cover-image-dark.png);
   --bg-color: #000028;
   --text-color: #f1b2ce;
   --accent-color: #ff0070;
@@ -24,7 +34,7 @@
 }
 
 .theme-dark .page {
-  background-image: url(../images/cover-image-dark.png);
+ background-image: url(../images/cover-image-dark.png);
   --bg-color: #000028;
   --text-color: #f1b2ce;
   --accent-color: #ff0070;
@@ -65,11 +75,46 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-        /* Дублируем переменные светлой темы */
-        --bg-color: #000028;
+        /* Дублируем переменные темной темы */
+        background-image: url(../images/cover-image-dark.png);
         --text-color: #f1b2ce;
         --accent-color: #ff0070;
         --heading-color: #db00ff;
     }
   }
 
+@media (prefers-color-scheme: dark) {
+  body.theme-auto {
+    background-image: url(../images/cover-image-dark.png);
+    --bg-color: #000028;
+    --text-color: #f1b2ce;
+    --accent-color: #ff0070;
+    --heading-color: #db00ff;
+  }
+
+  .content__paragraph,
+  .paragraph__title,
+  .content__title-rec,
+  .content__title_insta {
+    color: var(--bg-color);
+  }
+
+  .decorated-zone,
+  .content__title,
+  .header__theme-menu-button {
+    color: var(--accent-color);
+  }
+
+  .header__theme-menu-button:focus-visible {
+    border-bottom: 1px solid var(--accent-color);
+    color: var(--accent-color);
+  }
+
+  .header__theme-menu-button:hover {
+    outline: 1px solid rgba(255, 0, 112, 0.4);
+  }
+
+  .header__theme-menu-button_active {
+    outline-color: var(--accent-color);
+  }
+}

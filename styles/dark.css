@@ -10,6 +10,7 @@
       --text-color: #f1b2ce;
       --accent-color: #ff0070;
       --heading-color: #db00ff;
+      --color-pink-rgb: 255, 0, 112;
   }
 
   :root {
@@ -18,10 +19,52 @@
       --text-color: #f1b2ce;
       --accent-color: #ff0070;
       --heading-color: #db00ff;
+      --color-pink-rgb: 255, 0, 112;
       background-attachment: fixed;
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
+    }
+
+    .decorated-zone::before {
+      border-right: 1px solid var(--accent-color);
+      border-top: 1px solid var(--accent-color);
+    }
+  
+    .decorated-zone::after {
+      border-left: 1px solid var(--accent-color);
+      border-bottom: 1px solid var(--accent-color);
+    }
+  
+    .decorated-element {
+      visibility: visible;
+    }
+  
+    .decorated-zone,
+    .content__title,
+    .title-decor,
+    .header__theme-menu-button {
+      color: var(--accent-color);
+    }
+  
+    .content__paragraph,
+    .paragraph__title,
+    .content__title-rec,
+    .content__title_insta {
+      color: var(--bg-color);
+    }
+
+    .header__theme-menu-button:focus-visible {
+      border-bottom: 1px solid var(--accent-color);
+      color: var(--accent-color);
+    }
+    
+    .header__theme-menu-button:hover {
+      outline: 1px solid rgba(var(--color-pink-rgb), 0.4);
+    }
+    
+    .header__theme-menu-button_active {
+      outline-color: var(--accent-color);
     }
 }
 
@@ -35,10 +78,7 @@
   --text-color: #f1b2ce;
   --accent-color: #ff0070;
   --heading-color: #db00ff;
-}
-
-.theme_dark .header__theme-menu-button:hover {
-  outline: 1px solid rgba(var(--accent-color), 0.4);
+  --color-pink-rgb: 255, 0, 112;
 }
 
 .theme_dark {
@@ -68,5 +108,18 @@
   .content__title-rec,
   .content__title_insta {
     color: var(--bg-color);
+  }
+
+  .header__theme-menu-button:focus-visible {
+    border-bottom: 1px solid var(--accent-color);
+    color: var(--accent-color);
+  }
+
+  .header__theme-menu-button:hover {
+    outline: 1px solid rgba(var(--color-pink-rgb), 0.4);
+  }
+
+  .header__theme-menu-button_active {
+      outline-color: var(--accent-color);
   }
 }

@@ -10,6 +10,7 @@
     --text-color: #353430;
     --accent-color: #ff8dcb;
     --heading-color: #ffc2e6;
+    --color-gray-rgb: 53, 52, 42;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -22,39 +23,15 @@
     --text-color: #353430;
     --accent-color: #ff8dcb;
     --heading-color: #ffc2e6;
+    --color-gray-rgb: 53, 52, 42;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
   }
-}
 
-.page.theme_light {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
-  background-image: url(../images/cover-image-light.png);
-  --bg-color: #fff1f7;
-  --text-color: #353430;
-  --accent-color: #ff8dcb;
-  --heading-color: #ffc2e6;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.theme_light {
   .decorated-element {
     visibility: hidden;
-  }
-
- .content__title {
-    color: var(--text-color);
- }
-  .header__theme-menu-button {
-    color: var(--text-color);
   }
 
   .content__paragraph,
@@ -73,17 +50,34 @@
       --accent-color: #ff0070;
     }
   }
-/*
+
   .header__theme-menu-button:focus-visible {
     border-bottom: 1px solid var(--text-color);
     color: var(--text-color);
   }
 
   .header__theme-menu-button:hover {
-    outline: 1px solid rgba(var(--text-color), 0.4);
+    outline: 1px solid rgba(var( --color-gray-rgb), 0.4);
   }
 
   .header__theme-menu-button_active {
     outline-color: var(--text-color);
-  }*/
+  }
+}
+
+.page.theme_light {
+  /* сохраните этот селектор в приведённом виде.
+    Так стили написанные ниже будут иметь больший вес,
+    чем стили в медиазапросе предпочтений пользователя
+  */
+  background-image: url(../images/cover-image-light.png);
+  --bg-color: #fff1f7;
+  --text-color: #353430;
+  --accent-color: #ff8dcb;
+  --heading-color: #ffc2e6;
+  --color-gray-rgb: 53, 52, 42;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }

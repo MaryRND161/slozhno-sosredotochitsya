@@ -61,22 +61,3 @@ a:focus-visible {
 a:hover {
   text-decoration: underline;
 }
-
-/*a:focus,
-button:focus {
-  outline: none;
-}
-
-a:focus-visible,
-button:focus-visible {
-  outline: 1px solid currentColor;
-}
-
-button:disabled {
-  pointer-events: none;
-}
-*/
-
-
-
-

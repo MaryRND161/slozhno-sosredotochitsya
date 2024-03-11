@@ -49,6 +49,11 @@ a {
   text-shadow: 2px 2px 0 var(--accent-color);
 }
 
+button:focus,
+a:focus {
+  outline: none;
+}
+
 a:focus-visible {
   outline: 1px solid currentColor;
 }

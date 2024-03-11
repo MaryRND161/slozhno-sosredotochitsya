@@ -3,21 +3,30 @@
   Здесь окажутся стили, которые нужно переопределить принудительно,
   переключая тему
 */
-@media(preferens-color-scheme:light) {
+@media(prefers-color-scheme: light) {
   .page {
     background-image: url(../images/cover-image-light.png);
     --bg-color: #fff1f7;
     --text-color: #353430;
     --accent-color: #ff8dcb;
     --heading-color: #ffc2e6;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
-}
 
-:root.page.theme_light{
-  --bg-color: #fff1f7;
-  --text-color: #353430;
-  --accent-color: #ff8dcb;
-  --heading-color: #ffc2e6;
+  :root {
+    /* Дублируем переменные светлой темы */
+    --bg-color: #fff1f7;
+    --text-color: #353430;
+    --accent-color: #ff8dcb;
+    --heading-color: #ffc2e6;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }
 
 .page.theme_light {
@@ -30,29 +39,51 @@
   --text-color: #353430;
   --accent-color: #ff8dcb;
   --heading-color: #ffc2e6;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-        /* Дублируем переменные светлой темы */
-      background-image: url(../images/cover-image-light.png);
-      --bg-color: #fff1f7;
-      --text-color: #353430;
-      --accent-color: #ff8dcb;
-      --heading-color: #ffc2e6;
-    }
-}
-
-.theme-light .page {
-  background-image: url(../images/cover-image-light.png);
-}
-
-@media (prefers-color-scheme: light) {
-  body.theme-auto {
-    background-image: url(../images/cover-image-light.png);
-    --bg-color: #fff1f7;
-    --text-color: #353430;
-    --accent-color: #ff8dcb;
-    --heading-color: #ffc2e6;
+.theme_light {
+  .decorated-element {
+    visibility: hidden;
   }
+
+ .content__title {
+    color: var(--text-color);
+ }
+  .header__theme-menu-button {
+    color: var(--text-color);
+  }
+
+  .content__paragraph,
+  .paragraph__title,
+  .content__title-rec,
+  .content__title_insta,
+  .decorated-zone,
+  .content__title,
+  .title-decor,
+  .header__theme-menu-button {
+    color: var(--text-color);
+  }
+
+  @media (width>=1024px) {
+    .heading-footer {
+      --accent-color: #ff0070;
+    }
+  }
+/*
+  .header__theme-menu-button:focus-visible {
+    border-bottom: 1px solid var(--text-color);
+    color: var(--text-color);
+  }
+
+  .header__theme-menu-button:hover {
+    outline: 1px solid rgba(var(--text-color), 0.4);
+  }
+
+  .header__theme-menu-button_active {
+    outline-color: var(--text-color);
+  }*/
 }

@@ -1,13 +1,9 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  background-image: var(--bg-image);
+  background-color: var(--bg-color);
   font-family: var(--main-font, sans-serif);
   color: var(--text-color, #f1b2ce);
   font-size: 18px;
@@ -21,21 +17,8 @@
   display: grid;
   grid-template-rows: min-content 1fr min-content 1fr min-content;
   position: relative;
-  block-size: 178vw;
-}
-
-@media (768px<=width<1024px) {
-  .header {
-    aspect-ratio: 3/4;
-    block-size: auto;
-  }
-}
-
-@media (width>=1024px) {
-  .header {
-    aspect-ratio: 4/3;
-    block-size: auto;
-  }
+  block-size: 100 vh;
+  min-block-size: 668px;
 }
 
 .decorated-zone::before {
@@ -49,6 +32,7 @@
 
 .decorated-zone::after {
   content: "";
+  text-transform: uppercase;
   inline-size: 25px;
   block-size: 25px;
   border-left: 1px solid currentColor;
@@ -60,7 +44,7 @@
   top: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
   right: clamp(1.1875rem, 0.5911rem + 2.5445vw, 1.8125rem);
   color: var(--accent-color);
-  visibility: hidden;
+  visibility: visible;
 }
 
 .decorated-element::after {
@@ -70,7 +54,7 @@
   block-size: 9px;
   border-radius: 50%;
   background-color: var(--accent-color);
-  box-shadow: 0px 0px 4px 2px var(--accent-color);
+  box-shadow: 0 0 4px 2px var(--accent-color);
   margin-inline-start: 10px;
 }
 
@@ -108,11 +92,11 @@
   text-transform: lowercase;
   inline-size: 70px;
 }
-
+/*
 .header__theme-menu-button_type_light {
   color: currentColor;
 }
-
+*/
 .header__theme-menu-button:focus-visible {
   border-bottom: 1px solid currentcolor;
   color: currentColor;
@@ -120,7 +104,7 @@
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid rgb(53, 52, 48, 0.4);
+  outline: 1px solid rgb(var(--accent-color), 0.4);
 }
 
 .header__theme-menu-button_active {
@@ -185,7 +169,7 @@
   margin-block-start: clamp(2.5rem, 1.3073rem + 5.0891vw, 3.75rem);
 }
 
-.content__section_why {
+.content__section_why { /*-*/
   grid-template-areas:
     "why"
     "mult"
@@ -232,7 +216,7 @@
   grid-area: dop;
 }
 
-.content__section_what {
+.content__section_what { /*-*/
   grid-template-areas:
     "what"
     "mult"
@@ -277,7 +261,7 @@
   grid-area: gadget;
 }
 
-.content__section_to {
+.content__section_to {/*-*/
   grid-template-areas:
     "to"
     "rec"
@@ -417,41 +401,14 @@
 .footer {
   margin-block-start: clamp(2.5rem, 1.3073rem + 5.0891vw, 3.75rem);
   padding-inline: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
-  padding-block: 0 clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
+  padding-block: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
   display: grid;
-  place-content: center;
   grid-template-rows: min-content 1fr min-content;
-  grid-template-columns: min-content 1fr min-content;
-  block-size: 178vw;
-}
-
-@media (768px<=width<1024px) {
-  .footer {
-    aspect-ratio: 3/4;
-    block-size: auto;
-  }
-}
-
-@media (width>=1024px) {
-  .footer {
-    aspect-ratio: 4/3;
-    block-size: auto;
-  }
-}
-
-.zone-footer::before {
-  grid-area: 1/3;
-  margin-block-start: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem);
-}
-
-.zone-footer::after {
-  grid-area: 3/1;
-  margin-inline-end: calc(100% - 25px);
-  margin-block-end: clamp(0.625rem, 0.0286rem + 2.5445vw, 1.25rem)+50px;
+  min-block-size: 668px;
+  block-size: 100vh;
 }
 
 .heading-footer {
-  grid-area: 2/2;
   margin-inline-start: 0;
   justify-self: center;
   text-shadow: 2px 2px 0 var(--accent-color);
@@ -462,3 +419,31 @@
     --accent-color: #ff0070;
   }
 }
+
+.content__paragraph,
+.paragraph__title,
+.content__title-rec,
+.content__title_insta {
+  color: var(--bg-color);
+}
+
+.decorated-zone,
+.content__title,
+.title-decor,
+.header__theme-menu-button {
+  color: var(--accent-color);
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--accent-color);
+  color: var(--accent-color);
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid rgba(var(--accent-color), 0.4);
+}
+
+.header__theme-menu-button_active {
+  outline-color: var(--accent-color);
+}
+

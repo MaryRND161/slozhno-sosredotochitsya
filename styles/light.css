@@ -5,29 +5,12 @@
 */
 @media(prefers-color-scheme: light) {
   .page {
-    background-image: url(../images/cover-image-light.png);
+    --bg-image: url(../images/cover-image-light.png);
     --bg-color: #fff1f7;
     --text-color: #353430;
     --accent-color: #ff8dcb;
     --heading-color: #ffc2e6;
-    --color-gray-rgb: 53, 52, 42;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-
-  :root {
-    /* Дублируем переменные светлой темы */
-    --bg-color: #fff1f7;
-    --text-color: #353430;
-    --accent-color: #ff8dcb;
-    --heading-color: #ffc2e6;
-    --color-gray-rgb: 53, 52, 42;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    --color-hover-light-rgb: 53, 52, 42;
   }
 
   .decorated-element {
@@ -38,30 +21,17 @@
   .paragraph__title,
   .content__title-rec,
   .content__title_insta,
-  .decorated-zone,
-  .content__title,
-  .title-decor,
-  .header__theme-menu-button {
-    color: var(--text-color);
-  }
-
-  @media (width>=1024px) {
-    .heading-footer {
-      --accent-color: #ff0070;
-    }
-  }
-
-  .header__theme-menu-button:focus-visible {
-    border-bottom: 1px solid var(--text-color);
-    color: var(--text-color);
-  }
-
-  .header__theme-menu-button:hover {
-    outline: 1px solid rgba(var( --color-gray-rgb), 0.4);
-  }
-
+  .header__theme-menu-button,
+  .header__theme-menu-button:focus-visible,
+  .header__theme-menu-button:hover,
   .header__theme-menu-button_active {
-    outline-color: var(--text-color);
+    --bg-color: var(--text-color);
+  }
+
+  .content__title,
+  .decorated-zone::before,
+  .decorated-zone::after {
+    --accent-color: var(--text-color);
   }
 }
 
@@ -70,14 +40,32 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
-  background-image: url(../images/cover-image-light.png);
+  --bg-image: url(../images/cover-image-light.png);
   --bg-color: #fff1f7;
   --text-color: #353430;
   --accent-color: #ff8dcb;
   --heading-color: #ffc2e6;
   --color-gray-rgb: 53, 52, 42;
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+}
+
+.page.theme_light .decorated-element {
+  visibility: hidden;
+}
+/*
+.page.theme_light
+  .content__paragraph,
+  .paragraph__title,
+  .content__title-rec,
+  .content__title_insta,
+  .header__theme-menu-button,
+  .header__theme-menu-button:focus-visible,
+  .header__theme-menu-button:hover,
+  .header__theme-menu-button_active {
+  --bg-color: var(--text-color);
+}*/
+
+.content__title,
+.decorated-zone::before,
+.decorated-zone::after {
+  --accent-color: var(--text-color);
 }

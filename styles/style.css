@@ -2,10 +2,10 @@
  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
 .page {
   color: var(--text-color, #f1b2ce);
-  font-family: var(--main-font, sans-serif);
+  background-color: var(--bg-color, #000028);
+  font-family: var(--main-font, monospace);
   font-size: 18px;
-  background-color: var(--bg-color);
-  background-image: var(--bg-image);
+  background-image: var(--bg-image, url(../images/cover-image-dark.png));
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -45,6 +45,7 @@
   right: clamp(1.1875rem, 0.5911rem + 2.5445vw, 1.8125rem);
   visibility: visible;
   color: var(--accent-color);
+  text-transform: uppercase;
 }
 
 .decorated-element::after {
@@ -92,21 +93,26 @@
   text-transform: lowercase;
   background: transparent;
   inline-size: 70px;
+  cursor: pointer;
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid var(--accent-color);
+  pointer-events:none;
 }
 
 .header__theme-menu-button:focus-visible {
-  border-bottom: 1px solid currentcolor;
+  border-bottom: 1px solid var(--accent-color);
   outline: none;
   color: currentColor;
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid rgb(var(--accent-color), 0.4);
+  outline: 1px solid rgb(var(--button-decor-rgb), 0.4);
 }
 
-.header__theme-menu-button_active {
-  outline: 1px solid currentColor;
-  pointer-events: none;
+.header__theme-menu-button:active {
+  outline: 1px solid var(--accent-color);
 }
 
 .heading {
@@ -118,7 +124,7 @@
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   font-style: normal;
   line-height: 0.825;
-  text-shadow: 4px 4px 0 var(--accent-color);
+  text-shadow: 4px 4px 0 var(--title-bg-color);
 }
 
 @media (width>=768px) {
@@ -131,13 +137,13 @@
 
 @media (width>=1024px) {
   .heading {
-    text-shadow: 4px 4px 0 var(--accent-color);
+    text-shadow: 4px 4px 0 var(--shadow-decor);
   }
 }
 
 .content__paragraph {
   align-self: center;
-  color: var(--bg-color);
+  color: var(--title-color);
 }
 
 @media (width>=768px) {
@@ -150,7 +156,7 @@
 
 .title-decor {
   font-weight: 700;
-  background-color: var(--accent-color);
+  background-color: var(--title-bg-color);
 }
 
 .content__section {
@@ -217,7 +223,7 @@
 
 .paragraph__title {
   margin-block-end: 10px;
-  color: var(--bg-color);
+  color: var(--title-color);
 }
 
 .content__section_what {
@@ -304,7 +310,7 @@
 
 .content__title-rec {
   grid-area: rec;
-  color: var(--bg-color);
+  color: var(--title-color);
 }
 
 .small_title {
@@ -312,7 +318,7 @@
   font-weight: 400;
 }
 
-.content__text-block_to-sky:nth-child(n) {
+.content__text-block_to-sky {
   grid-area: mult;
 }
 
@@ -350,7 +356,7 @@
 
 .content__title_insta {
   grid-area: insta;
-  color: var(--bg-color);
+  color: var(--title-color);
 }
 
 .content__figure {
@@ -398,27 +404,11 @@
 .heading-footer {
   justify-self: center;
   margin-inline-start: 0;
-  text-shadow: 2px 2px 0 var(--accent-color);
+  text-shadow: 2px 2px 0 var(--title-bg-color);
 }
 
-.header__theme-menu-button:focus-visible {
-  border-bottom: 1px solid var(--accent-color);
-  color: var(--accent-color);
-}
-
-.header__theme-menu-button:hover {
-  outline: 1px solid rgba(var(--color-hover-rgb), 0.4);
-}
-
-.header__theme-menu-button_active {
-  outline-color: var(--accent-color);
-}
-
-  @media (width>=1024px) {
-    .heading-footer {
-      --accent-color: #ff0070;
-    }
-    .heading {
-      --accent-color: #ff0070;
-    }
+@media (width>=1024px) {
+  .heading-footer {
+    text-shadow: 2px 2px 0 var(--shadow-decor);
   }
+}

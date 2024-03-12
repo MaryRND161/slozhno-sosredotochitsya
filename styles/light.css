@@ -5,33 +5,19 @@
 */
 @media(prefers-color-scheme: light) {
   .page {
-    --bg-image: url(../images/cover-image-light.png);
     --bg-color: #fff1f7;
+    --bg-image: url(../images/cover-image-light.png);
     --text-color: #353430;
-    --accent-color: #ff8dcb;
+    --accent-color: #353430;
     --heading-color: #ffc2e6;
-    --color-hover-light-rgb: 53, 52, 42;
+    --title-color:  #353430;
+    --title-bg-color: #ff8dcb;
+    --shadow-decor: #ff0070;
+    --button-decor-rgb: 53, 52, 48; 
   }
 
   .decorated-element {
     visibility: hidden;
-  }
-
-  .content__paragraph,
-  .paragraph__title,
-  .content__title-rec,
-  .content__title_insta,
-  .header__theme-menu-button,
-  .header__theme-menu-button:focus-visible,
-  .header__theme-menu-button:hover,
-  .header__theme-menu-button_active {
-    --bg-color: var(--text-color);
-  }
-
-  .content__title,
-  .decorated-zone::before,
-  .decorated-zone::after {
-    --accent-color: var(--text-color);
   }
 }
 
@@ -40,32 +26,17 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
-  --bg-image: url(../images/cover-image-light.png);
   --bg-color: #fff1f7;
+  --bg-image: url(../images/cover-image-light.png);
   --text-color: #353430;
-  --accent-color: #ff8dcb;
+  --accent-color: #353430;
   --heading-color: #ffc2e6;
-  --color-gray-rgb: 53, 52, 42;
+  --title-color:  #353430;
+  --title-bg-color: #ff8dcb;
+  --shadow-decor: #ff0070;
+  --button-decor-rgb: 53, 52, 48; 
 }
 
 .page.theme_light .decorated-element {
   visibility: hidden;
-}
-/*
-.page.theme_light
-  .content__paragraph,
-  .paragraph__title,
-  .content__title-rec,
-  .content__title_insta,
-  .header__theme-menu-button,
-  .header__theme-menu-button:focus-visible,
-  .header__theme-menu-button:hover,
-  .header__theme-menu-button_active {
-  --bg-color: var(--text-color);
-}*/
-
-.content__title,
-.decorated-zone::before,
-.decorated-zone::after {
-  --accent-color: var(--text-color);
 }
